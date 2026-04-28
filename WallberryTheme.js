@@ -44,6 +44,9 @@ Module.register("WallberryTheme", {
 
 	start: function() {
 		Log.info("Starting module: " + this.name);
+		if (!this.config.unsplashAccessKey) {
+			return;
+		}
 		if (this.config.clearCacheOnStart) {
 			this.sendSocketNotification("CLEAR_CACHE");
 		} else {
@@ -169,6 +172,9 @@ Module.register("WallberryTheme", {
 
 	resume: function() {
 		Log.info("Waking WallberryTheme...");
+		if (!this.config.unsplashAccessKey) {
+			return;
+		}
 		clearTimeout(this.fetchTimer);
 		this.fetchPhoto();
 	},

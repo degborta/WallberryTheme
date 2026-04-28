@@ -16,6 +16,6 @@
 		<div class="wb-error-reason"><i class="wb-error-icon fa fa-exclamation-triangle" aria-hidden="true"></i>Error Loading Background<i class="wb-error-icon fa fa-exclamation-triangle" aria-hidden="true"></i></div>
 		<div class="wb-error-info">{{ photoError }}</div>
 	</div>
-{% else %}
+{% elif config.unsplashAccessKey %}
 	<div class="wb-unsplash-bg-attribution">Loading background photo...</div>
 {% endif %}
